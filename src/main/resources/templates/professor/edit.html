@@ -7,7 +7,7 @@
 <nav th:replace="fragments/nav"></nav>
 <div class="container" id="main-container">
     <h2>Editar nota</h2>
-    <form class="form-horizontal" method="post" th:action="${'professor/edit/' + professor.id}">
+    <form class="form-horizontal" method="post" th:action="${'/professor/edit/' + professor.id}">
         <div class="form-group">
             <label class="control-label col-sm-2" for="dni">DNI:</label>
             <div class="col-sm-10">
