@@ -43,18 +43,20 @@ public class MarksController {
         return "mark/add";
     }
 
-    @RequestMapping(value = "/mark/edit/{id}")
-    public String getEdit(Model model, @PathVariable Long id) {
-        model.addAttribute("mark", marksService.getMark(id));
-        return "mark/edit";
-    }
-
     @RequestMapping(value="/mark/edit/{id}", method=RequestMethod.POST)
     public String setEdit(@ModelAttribute Mark mark, @PathVariable Long id){
         mark.setId(id);
         marksService.addMark(mark);
         return "redirect:/mark/details/"+id;
     }
+
+    @RequestMapping(value = "/mark/edit/{id}")
+    public String getEdit(Model model, @PathVariable Long id) {
+        model.addAttribute("mark", marksService.getMark(id));
+        return "mark/edit";
+    }
+
+
 
 
 
