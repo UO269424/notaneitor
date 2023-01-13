@@ -1,5 +1,6 @@
 package com.uniovi.notaneitor.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -9,7 +10,9 @@ public class Professor {
     @Id
     @GeneratedValue
     private Long id;
-    private String dni, nombre, apellidos, categoria;
+    @Column(unique = true)
+    private String dni;
+    private String nombre, apellidos, categoria;
 
     public Professor() {
     }
